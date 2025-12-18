@@ -49,7 +49,6 @@ management, and desktop integration.
 
 (Add your images here)
 
-![Home](screenshots/main.png)
 <img width="1366" height="768" alt="Screenshot (224)" src="https://github.com/user-attachments/assets/cdb3008c-0886-485c-936b-9aa32e89ecdb" />
 <img width="1366" height="768" alt="Screenshot (210)" src="https://github.com/user-attachments/assets/11133a58-93c2-4ec1-ad26-743116d556f5" />
 <img width="1366" height="768" alt="Screenshot (211)" src="https://github.com/user-attachments/assets/7226e53c-9649-44e9-83f1-a888eb493747" />
