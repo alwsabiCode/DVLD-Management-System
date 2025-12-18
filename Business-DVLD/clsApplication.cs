@@ -43,7 +43,13 @@ namespace Business_DVLD
         public clsApplicationType ApplicationTypeInfo;
         public clsPerson PersonInfo;
 
-        public enApplicationStatus ApplicationStatus { get; set; }
+        public enApplicationStatus ApplicationStatus {
+            get { return (enApplicationStatus)_ADTO.ApplicationStatus; }
+            set
+            {
+                ApplicationStatus = value;
+            }
+        }
          
         public string StatusText
         {

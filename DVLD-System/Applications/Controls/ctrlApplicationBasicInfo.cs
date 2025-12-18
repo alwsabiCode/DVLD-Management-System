@@ -40,7 +40,7 @@ namespace DVLD_System.Applications.Controls
         {
             _ApplicationID=_Application.ApplicationID ;
             lblApplicationID.Text=_Application.ApplicationID.ToString();
-            lblStatus.Text=_Application.StatusText;
+            lblStatus.Text = _Application.StatusText;
             lblType.Text = _Application.ApplicationTypeInfo.ApplicationTypeDTO.ApplicationTypeTitle;
             lblFees.Text = _Application.ApplicatDTO.PaidFees.ToString();
             lblApplicant.Text = _Application.PersonInfo.PDTO.FullName;

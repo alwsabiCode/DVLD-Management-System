@@ -26,7 +26,46 @@ namespace DVLD_System.Tests
             _AppointmentID = AppointmentID;
             _testTypeID = testType;
         }
+        private void frmTakeTest_Load(object sender, EventArgs e)
+        {
+            ctrlSecheduledTest1.TestTypeID = _testTypeID;
 
+            ctrlSecheduledTest1.LoadInfo(_AppointmentID);
+
+
+            if (ctrlSecheduledTest1.TestAppointmentID == -1)
+            {
+                btnSave.Enabled = false;
+
+            }
+            else
+            {
+                btnSave.Enabled = true;
+
+            }
+            int testID = ctrlSecheduledTest1.TestID;
+            if (testID != -1)
+            {
+                _Test = clsTest.Find(testID);
+                if (_Test.testDTO.TestResult)
+                {
+                    rbPass.Checked = true;
+
+                }
+                else
+                {
+                    rbFail.Checked = true;
+                    txtNotes.Text = _Test.testDTO.Note;
+                }
+                lblUserMessage.Visible = true;
+                rbPass.Enabled = false;
+                rbFail.Enabled = false;
+
+            }
+          
+            _Test = new clsTest(new clsTestDTO(), clsTest.enMode.AddNew);
+            
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to save? After that you cannot change the Pass/Fail results after you save?.",
@@ -35,9 +74,9 @@ namespace DVLD_System.Tests
                 return;
             }
 
-            _Test.testDTO. TestAppointmentID = _AppointmentID;
+            _Test.testDTO.TestAppointmentID = _AppointmentID;
             _Test.testDTO.TestResult = rbPass.Checked;
-            _Test.testDTO. Note = txtNotes.Text.Trim();
+            _Test.testDTO.Note = txtNotes.Text.Trim();
             _Test.testDTO.CreatedByUerID = clsGlobal.CurrentUser.UserDTO.UserID;
 
             if (_Test.Save())
@@ -52,45 +91,7 @@ namespace DVLD_System.Tests
         
         }
 
-        private void frmTakeTest_Load(object sender, EventArgs e)
-        {
-            ctrlSecheduledTest1.TestTypeID=_testTypeID;
-            ctrlSecheduledTest1.LoadInfo(_AppointmentID);
-
-            if (ctrlSecheduledTest1.TestAppointmentID == -1)
-            {
-                btnSave.Enabled = false;
-
-            }
-            else
-            {
-                btnSave.Enabled = true;
-            
-            }
-            int testID = ctrlSecheduledTest1.TestID;
-            if (testID != -1)
-            {
-                _Test = clsTest.Find(testID);
-                if (_Test.testDTO.TestResult)
-                {
-                    rbPass.Checked= true;
-
-                }
-                else
-                {
-                     rbFail.Checked= true;
-                    txtNotes.Text= _Test.testDTO.Note;
-                }
-                lblUserMessage.Visible = true;
-                rbPass.Enabled = false;
-                rbFail.Enabled = false;
-
-            }
-            else
-            {
-                _Test=new clsTest(new clsTestDTO(),clsTest.enMode.AddNew);
-            }
-        }
+       
 
         private void btnClose_Click(object sender, EventArgs e)
         {

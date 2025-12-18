@@ -58,7 +58,7 @@ namespace Business_DVLD
             {
                 case enMode.AddNew:
                     {
-                        if( _AddNewAppointment())
+                        if (_AddNewAppointment())
                         {
                             Mode = enMode.Update;
                             return true;
@@ -66,14 +66,15 @@ namespace Business_DVLD
                         else
                         {
                             return false;
-                        };
-                        
+                        }
+                        ;
+
                     }
                 case enMode.Update:
-                    {
-                        return _UpdateAppointment();
-                        
-                    }
+
+                    return _UpdateAppointment();
+
+
             }
             return false;
         }

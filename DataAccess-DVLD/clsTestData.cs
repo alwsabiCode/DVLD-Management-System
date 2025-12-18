@@ -100,6 +100,7 @@ namespace DataAccess_DVLD
                     };
                     command.Parameters.Add(outPut);
                     conection.Open();
+                    command.ExecuteNonQuery();
                     return Convert.ToInt32(outPut.Value);
 
                 }

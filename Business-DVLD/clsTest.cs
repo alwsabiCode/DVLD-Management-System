@@ -58,13 +58,13 @@ namespace Business_DVLD
         }
         private bool _AddNewTest()
         {
-            this.TestID = clsTestData.AddNewTest(testDTO);
+            this.TestID = clsTestData.AddNewTest(_TDTO);
             return (this.TestID != -1);
 
         }
         private bool _UpdateTest()
         {
-            return clsTestData.UpdateTest(testDTO);
+            return clsTestData.UpdateTest(_TDTO);
         }
         public bool Save()
         {

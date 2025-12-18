@@ -91,7 +91,6 @@ namespace DVLD_System.Tests.Controls
                 _TestAppointmentID = -1;
                 return;
             }
-
             _TestID = _TestAppointment.TestID;
 
             _LocalDrivingLicenseApplicationID = _TestAppointment.TestAppointmentDTO.LocalDrivingLicenseApplicationID;
