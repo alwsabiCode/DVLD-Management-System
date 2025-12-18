@@ -47,7 +47,7 @@ management, and desktop integration.
 
 ## 📸 Screenshots
 ![Login]
-<img width="1366" height="768" alt="Screenshot (224)" src="https://github.com/user-attachments/assets/cdb3008c-0886-485c-936b-9aa32e89ecdb" />
+<img width="1366" height="768" alt="Screenshot (209)" src="https://github.com/user-attachments/assets/e11e1000-ad06-4a77-8ec2-aae076c17aa7" />
 ![Main]
 <img width="1366" height="768" alt="Screenshot (210)" src="https://github.com/user-attachments/assets/11133a58-93c2-4ec1-ad26-743116d556f5" />
 ![People]
