@@ -5,16 +5,16 @@
 
 <p align="center">
   A full .NET system for managing driver licenses and vehicle
-  department operations using C#.NET, SQL Server, and WinForms.
+  department operations using C#.NET, SQL Server, WinForms.
 </p>
 
 ---
 
 ## 📌 Overview
 
-DVLD Management System is a backend‑oriented .NET application that
+DVLD Management System is .NET application that
 simulates a real Driving & Vehicle License Department.  
-It demonstrates strong backend skills including database
+skills including database
 management, and desktop integration.
 
 ---
@@ -23,7 +23,7 @@ management, and desktop integration.
 
 ✔ User Authentication & Authorization  
 ✔ Manage Drivers & Applications  
-✔ License Tests 
+✔ License Tests
 ✔ CRUD Operations  
 ✔ SQL Server Stored Procedures  
 ✔ Layered & Clean Architecture  
