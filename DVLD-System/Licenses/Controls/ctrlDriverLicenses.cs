@@ -109,6 +109,12 @@ namespace DVLD_System.Licenses.Controls
         {
             _DriverID = DriverID;
             _driver = clsDriver.FindByPersonID(_DriverID);
+
+            if(_driver==null)
+            {
+                MessageBox.Show("There in no Driver with id = "+_DriverID.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             _LoadLicenseInfo();
             _LoadInternationalLicenseInfo();
             
@@ -116,17 +122,20 @@ namespace DVLD_System.Licenses.Controls
         public void LoadInfoByPersonID(int PersonID)
         {
             _driver = clsDriver.FindByPersonID(PersonID);
-            if (_driver!=null)
+
+            if (_driver == null)
             {
-                _DriverID = clsDriver.FindByPersonID(PersonID).DriverID;
-              
+                MessageBox.Show("There in no Driver linked with person id = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+             _DriverID=_driver.DriverID;
             _LoadLicenseInfo();
             _LoadInternationalLicenseInfo();
         }
         public void Clear()
         {
             _ListDriverLocalLicensesHistory.Clear();
+            _ListDriverInternationalLicensesHistory.Clear();
 
         }
 
