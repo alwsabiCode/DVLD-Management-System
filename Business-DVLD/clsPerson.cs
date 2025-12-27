@@ -19,7 +19,7 @@ namespace Business_DVLD
         public clsCountry CountryInfo;
 
         private clsPersonDTO _PDTO;        
-        public clsPersonDTO PDTO
+        public clsPersonDTO PeopleDTO
         {
             get { return _PDTO; }
         }
@@ -66,12 +66,12 @@ namespace Business_DVLD
         
         private bool _AddNewPerson()
         {
-            this.PersonID= clsPersonData.AddNewPerson(PDTO);
+            this.PersonID= clsPersonData.AddNewPerson(_PDTO);
             return (this.PersonID != -1);
         }
         private bool _UpdatePerson()
         {
-            return clsPersonData.UpdatePerson(PDTO);
+            return clsPersonData.UpdatePerson(_PDTO);
         }
         public bool Save()
         {

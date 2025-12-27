@@ -61,20 +61,20 @@ namespace DVLD_System.People.Controls
             llEditPersonInfo.Enabled = true;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
-            lblNationalNo.Text = _Person.PDTO.NationalNo;
-            lblFullName.Text = _Person.PDTO.FullName;
-            lblGendor.Text = (_Person.PDTO.Gendor == 0) ? "Male" : "Female";
-            lblEmail.Text = _Person.PDTO.Email;
-            lblPhone.Text = _Person.PDTO.Phone;
-            lblDateOfBirth.Text = _Person.PDTO.DateOfBirth.ToShortDateString();
-            lblCountry.Text = _Person.PDTO.CountryName;
-            lblAddress.Text = _Person.PDTO.Address;
+            lblNationalNo.Text = _Person.PeopleDTO.NationalNo;
+            lblFullName.Text = _Person.PeopleDTO.FullName;
+            lblGendor.Text = (_Person.PeopleDTO.Gendor == 0) ? "Male" : "Female";
+            lblEmail.Text = _Person.PeopleDTO.Email;
+            lblPhone.Text = _Person.PeopleDTO.Phone;
+            lblDateOfBirth.Text = _Person.PeopleDTO.DateOfBirth.ToShortDateString();
+            lblCountry.Text = _Person.PeopleDTO.CountryName;
+            lblAddress.Text = _Person.PeopleDTO.Address;
             
             _LoadPersonImage();
         }
         private void _LoadPersonImage()
         {
-            if (_Person.PDTO.Gendor == 0)
+            if (_Person.PeopleDTO.Gendor == 0)
             {
                 pbGendor.Image = Resources.Man_32;
                 pbPersonImage.Image = Resources.Male_512;
@@ -86,7 +86,7 @@ namespace DVLD_System.People.Controls
                 pbPersonImage.Image = Resources.Female_512;
 
             }
-            string imgPath = _Person.PDTO.ImagePath;
+            string imgPath = _Person.PeopleDTO.ImagePath;
             if (imgPath!="")      
             {
                 if (File.Exists(imgPath))

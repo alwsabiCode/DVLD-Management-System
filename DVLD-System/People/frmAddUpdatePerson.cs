@@ -94,36 +94,36 @@ namespace DVLD_System.People
 
             //the following code will not be executed if the person was not found
             lblPersonID.Text = _PersonID.ToString();
-            txtFirstName.Text = _Person.PDTO.FirstName;
-            txtSecondName.Text = _Person.PDTO.SecondName;
-            txtThirdName.Text = _Person.PDTO.ThirdName;
-            txtLastName.Text = _Person.PDTO.LastName;
-            txtNationalNo.Text = _Person.PDTO.NationalNo;
-            dtpDateOfBirth.Value = _Person.PDTO.DateOfBirth;
+            txtFirstName.Text = _Person.PeopleDTO.FirstName;
+            txtSecondName.Text = _Person.PeopleDTO.SecondName;
+            txtThirdName.Text = _Person.PeopleDTO.ThirdName;
+            txtLastName.Text = _Person.PeopleDTO.LastName;
+            txtNationalNo.Text = _Person.PeopleDTO.NationalNo;
+            dtpDateOfBirth.Value = _Person.PeopleDTO.DateOfBirth;
 
-            if (_Person.PDTO.Gendor == 0)
+            if (_Person.PeopleDTO.Gendor == 0)
                 rbMale.Checked = true;
 
 
             else
                 rbFemale.Checked = true;
 
-            txtAddress.Text = _Person.PDTO.Address;
-            txtPhone.Text = _Person.PDTO.Phone;
-            txtEmail.Text = _Person.PDTO.Email;
+            txtAddress.Text = _Person.PeopleDTO.Address;
+            txtPhone.Text = _Person.PeopleDTO.Phone;
+            txtEmail.Text = _Person.PeopleDTO.Email;
             
-            cbCountry.SelectedIndex = cbCountry.FindString(_Person.PDTO.CountryName);
+            cbCountry.SelectedIndex = cbCountry.FindString(_Person.PeopleDTO.CountryName);
             
 
             //load person image incase it was set.
-            if (_Person.PDTO.ImagePath != "")
+            if (_Person.PeopleDTO.ImagePath != "")
             {
-                pbImagePerson.ImageLocation = _Person.PDTO.ImagePath;
+                pbImagePerson.ImageLocation = _Person.PeopleDTO.ImagePath;
 
             }
 
             //hide/show the remove linke incase there is no image for the person.
-            llRemoveImage.Visible = (_Person.PDTO.ImagePath != "");
+            llRemoveImage.Visible = (_Person.PeopleDTO.ImagePath != "");
 
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -158,13 +158,13 @@ namespace DVLD_System.People
         }
         private bool _HandlePersonImage()
         {
-            if (_Person.PDTO.ImagePath != pbImagePerson.ImageLocation)
+            if (_Person.PeopleDTO.ImagePath != pbImagePerson.ImageLocation)
             {
-                if (_Person.PDTO.ImagePath !="")
+                if (_Person.PeopleDTO.ImagePath !="")
                 {
                     try
                     {
-                        File.Delete(_Person.PDTO.ImagePath);
+                        File.Delete(_Person.PeopleDTO.ImagePath);
                     }
                     catch (Exception ex)
                     {
@@ -180,7 +180,7 @@ namespace DVLD_System.People
                     if (clsUtil.CopyImageToProjectImagesFolder(ref imagesFolder))
                     {
                         pbImagePerson.ImageLocation = imagesFolder;
-                        _Person.PDTO.ImagePath = imagesFolder;
+                        _Person.PeopleDTO.ImagePath = imagesFolder;
                         return true;
                     }
                     else
@@ -212,7 +212,7 @@ namespace DVLD_System.People
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pbImagePerson.ImageLocation = null;
-            _Person.PDTO.ImagePath = null;
+            _Person.PeopleDTO.ImagePath = null;
 
             if (rbMale.Checked)
             {
@@ -287,7 +287,7 @@ namespace DVLD_System.People
             }
 
 
-            if (txtNationalNo.Text.Trim() != _Person.PDTO.NationalNo && clsPerson.isPersonExist(txtNationalNo.Text.Trim()))
+            if (txtNationalNo.Text.Trim() != _Person.PeopleDTO.NationalNo && clsPerson.isPersonExist(txtNationalNo.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtNationalNo, "Person with this National No. already exists.");
@@ -304,26 +304,26 @@ namespace DVLD_System.People
 
 
             int NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
-            _Person.PDTO.NationalNo = txtNationalNo.Text.Trim();
-            _Person.PDTO.FirstName = txtFirstName.Text.Trim();
-            _Person.PDTO.SecondName = txtSecondName.Text.Trim();
-            _Person.PDTO.ThirdName = txtThirdName.Text.Trim();
-            _Person.PDTO.LastName = txtLastName.Text.Trim();
-            _Person.PDTO.DateOfBirth = dtpDateOfBirth.Value;
-            _Person.PDTO.Gendor = rbMale.Checked ? (short)enGender.Male : (short)enGender.Female;
-            _Person.PDTO.Address = txtAddress.Text.Trim();
-            _Person.PDTO.Phone = txtPhone.Text.Trim();
-            _Person.PDTO.Email = txtEmail.Text.Trim();
-            _Person.PDTO.NationalityCountryID = NationalityCountryID;
+            _Person.PeopleDTO.NationalNo = txtNationalNo.Text.Trim();
+            _Person.PeopleDTO.FirstName = txtFirstName.Text.Trim();
+            _Person.PeopleDTO.SecondName = txtSecondName.Text.Trim();
+            _Person.PeopleDTO.ThirdName = txtThirdName.Text.Trim();
+            _Person.PeopleDTO.LastName = txtLastName.Text.Trim();
+            _Person.PeopleDTO.DateOfBirth = dtpDateOfBirth.Value;
+            _Person.PeopleDTO.Gendor = rbMale.Checked ? (short)enGender.Male : (short)enGender.Female;
+            _Person.PeopleDTO.Address = txtAddress.Text.Trim();
+            _Person.PeopleDTO.Phone = txtPhone.Text.Trim();
+            _Person.PeopleDTO.Email = txtEmail.Text.Trim();
+            _Person.PeopleDTO.NationalityCountryID = NationalityCountryID;
 
             if (pbImagePerson.ImageLocation != null)
             {
 
-                _Person.PDTO.ImagePath = pbImagePerson.ImageLocation;
+                _Person.PeopleDTO.ImagePath = pbImagePerson.ImageLocation;
             }
             else
             {
-                _Person.PDTO.ImagePath = "";
+                _Person.PeopleDTO.ImagePath = "";
             }
             if (!this.ValidateChildren())
             {

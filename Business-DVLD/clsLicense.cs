@@ -16,7 +16,26 @@ namespace Business_DVLD
 
         public int LicenseID {  get; set; }
         public enum enIssueReason { FirstTime = 1, Renew = 2, DamagedReplacement = 3, LostReplacement = 4 };
-        public enIssueReason IssueReason { get; set; }
+        private clsLicenseDTO _LDTO;
+        public clsLicenseDTO licenseDTO
+        {
+            get
+            {
+                return _LDTO;
+            }
+
+        }
+        public enIssueReason IssueReason {
+            get
+            {
+                return (enIssueReason)_LDTO.IssueReason;
+                
+            }
+            set 
+            { 
+                IssueReason = value;
+            }
+        }
         public string IssueReasonText
         {
             get
@@ -45,24 +64,15 @@ namespace Business_DVLD
         public clsLicenseClass LicenseClassIfo;
         public clsDriver DriverInfo;
 
-        private clsLicenseDTO _LicenseDTO;
-        public clsLicenseDTO licenseDTO
-        {
-            get
-            {
-                return _LicenseDTO;
-            }
-
-        }
         public clsLicense(clsLicenseDTO LDTO,enMode eMode=enMode.AddNew)
         {
-            _LicenseDTO=LDTO??new clsLicenseDTO();
+            _LDTO=LDTO??new clsLicenseDTO();
             this.Mode=eMode;
-            this.LicenseID = _LicenseDTO.LicenseID;
+            this.LicenseID = _LDTO.LicenseID;
 
-            DriverInfo = clsDriver.FindByDriverID(_LicenseDTO.DriverID);
-            LicenseClassIfo = clsLicenseClass.Find(_LicenseDTO.LicenseClass);
-            DetainedInfo = clsDetainedLicense.FindByLicenseID(_LicenseDTO.LicenseID);
+            DriverInfo = clsDriver.FindByDriverID(_LDTO.DriverID);
+            LicenseClassIfo = clsLicenseClass.Find(_LDTO.LicenseClass);
+            DetainedInfo = clsDetainedLicense.FindByLicenseID(_LDTO.LicenseID);
 
         }
 
@@ -81,12 +91,12 @@ namespace Business_DVLD
         }
         private bool _AddNewLicense()
         {
-            this.LicenseID = clsLicenseData.AddNewLicense(licenseDTO);
+            this.LicenseID = clsLicenseData.AddNewLicense(_LDTO);
             return (this.LicenseID != -1);
         }
         private bool _UpdateLicense()
         {
-            return clsLicenseData.UpdateLicense(licenseDTO);
+            return clsLicenseData.UpdateLicense(_LDTO);
         }
         public bool Save()
         {
@@ -190,19 +200,19 @@ namespace Business_DVLD
                 return null;
             }
             clsLicense NewLicense = new clsLicense(new clsLicenseDTO(), clsLicense.enMode.AddNew);
-            NewLicense._LicenseDTO. ApplicationID = application.ApplicationID;
-            NewLicense._LicenseDTO.DriverID =this._LicenseDTO.DriverID;
-            NewLicense._LicenseDTO.LicenseClass = this._LicenseDTO.LicenseClass;
-            NewLicense._LicenseDTO.IssueDate = DateTime.Now;
+            NewLicense._LDTO. ApplicationID = application.ApplicationID;
+            NewLicense._LDTO.DriverID =this._LDTO.DriverID;
+            NewLicense._LDTO.LicenseClass = this._LDTO.LicenseClass;
+            NewLicense._LDTO.IssueDate = DateTime.Now;
 
             int DefaultValidityLength = this.LicenseClassIfo.LicenseClassDTO.DefaultValidityLength;
 
-            NewLicense._LicenseDTO.ExpirationDate = DateTime.Now.AddYears(DefaultValidityLength);
-            NewLicense._LicenseDTO. Notes = Notes;
-            NewLicense._LicenseDTO.PaidFees = this.LicenseClassIfo.LicenseClassDTO.ClassFees;
-            NewLicense._LicenseDTO.IsActive = true;
-            NewLicense._LicenseDTO.IssueReason = (int)clsLicense.enIssueReason.Renew;
-            NewLicense._LicenseDTO. CreatedByUserID = CreatedByUserID;
+            NewLicense._LDTO.ExpirationDate = DateTime.Now.AddYears(DefaultValidityLength);
+            NewLicense._LDTO. Notes = Notes;
+            NewLicense._LDTO.PaidFees = this.LicenseClassIfo.LicenseClassDTO.ClassFees;
+            NewLicense._LDTO.IsActive = true;
+            NewLicense._LDTO.IssueReason = (int)enIssueReason.Renew;
+            NewLicense._LDTO. CreatedByUserID = CreatedByUserID;
 
 
             if (!NewLicense.Save())
@@ -241,16 +251,16 @@ namespace Business_DVLD
 
             clsLicense NewLicense = new clsLicense(new clsLicenseDTO(),clsLicense.enMode.AddNew );
 
-            NewLicense._LicenseDTO.ApplicationID = Application.ApplicationID;
-            NewLicense._LicenseDTO.DriverID = this._LicenseDTO.DriverID;
-            NewLicense._LicenseDTO.LicenseClass = this._LicenseDTO.LicenseClass;
-            NewLicense._LicenseDTO.IssueDate = DateTime.Now;
-            NewLicense._LicenseDTO.ExpirationDate = this._LicenseDTO.ExpirationDate;
-            NewLicense._LicenseDTO.Notes = this._LicenseDTO.Notes;
-            NewLicense._LicenseDTO.PaidFees = 0;// no fees for the license because it's a replacement.
-            NewLicense._LicenseDTO.IsActive = true;
+            NewLicense._LDTO.ApplicationID = Application.ApplicationID;
+            NewLicense._LDTO.DriverID = this._LDTO.DriverID;
+            NewLicense._LDTO.LicenseClass = this._LDTO.LicenseClass;
+            NewLicense._LDTO.IssueDate = DateTime.Now;
+            NewLicense._LDTO.ExpirationDate = this._LDTO.ExpirationDate;
+            NewLicense._LDTO.Notes = this._LDTO.Notes;
+            NewLicense._LDTO.PaidFees = 0; // no fees for the license because it's a replacement.
+            NewLicense._LDTO.IsActive = true;
             NewLicense.IssueReason = IssueReason;
-            NewLicense._LicenseDTO.CreatedByUserID = CreatedByUserID;
+            NewLicense._LDTO.CreatedByUserID = CreatedByUserID;
 
 
 

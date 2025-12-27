@@ -33,7 +33,7 @@ namespace DVLD_System.Licenses.Local_Licenses.Controls
         }
         private void _LoadPersonImage()
         {
-            if (_License.DriverInfo.PersonInfo.PDTO.Gendor==0)
+            if (_License.DriverInfo.PersonInfo.PeopleDTO.Gendor==0)
             {
                 pbPersonImage.Image = Resources.Male_512;
                 pbGendor.Image = Resources.Man_32;
@@ -43,7 +43,7 @@ namespace DVLD_System.Licenses.Local_Licenses.Controls
                 pbPersonImage.Image= Resources.Female_512;
                 pbGendor.Image= Resources.Woman_32;
             }
-            string ImagePath=_License.DriverInfo.PersonInfo.PDTO.ImagePath;
+            string ImagePath=_License.DriverInfo.PersonInfo.PeopleDTO.ImagePath;
             if(ImagePath!="")
                 if(File.Exists(ImagePath))
                     pbPersonImage.Load(ImagePath);
@@ -68,10 +68,10 @@ namespace DVLD_System.Licenses.Local_Licenses.Controls
             lblIsActive.Text = _License.licenseDTO.IsActive ? "Yes" : "No";
             lblIsDetained.Text = _License.IsDetained ? "Yes" : "No";
             lblClass.Text = _License.LicenseClassIfo.LicenseClassDTO.ClassName;
-            lblFullName.Text = _License.DriverInfo.PersonInfo.PDTO.FullName;
-            lblNationalNo.Text = _License.DriverInfo.PersonInfo.PDTO.NationalNo;
-            lblGendor.Text = _License.DriverInfo.PersonInfo.PDTO.Gendor == 0 ? "Male" : "Female";
-            lblDateOfBirth.Text = clsFormat.DateToShort(_License.DriverInfo.PersonInfo.PDTO.DateOfBirth);
+            lblFullName.Text = _License.DriverInfo.PersonInfo.PeopleDTO.FullName;
+            lblNationalNo.Text = _License.DriverInfo.PersonInfo.PeopleDTO.NationalNo;
+            lblGendor.Text = _License.DriverInfo.PersonInfo.PeopleDTO.Gendor == 0 ? "Male" : "Female";
+            lblDateOfBirth.Text = clsFormat.DateToShort(_License.DriverInfo.PersonInfo.PeopleDTO.DateOfBirth);
 
             lblDriverID.Text = _License.licenseDTO.DriverID.ToString();
             lblIssueDate.Text = clsFormat.DateToShort(_License.licenseDTO.IssueDate);

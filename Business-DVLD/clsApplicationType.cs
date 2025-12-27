@@ -12,7 +12,7 @@ namespace Business_DVLD
     {
         public enum enMode {AddNew=0,Update=1 }
         public enMode Mode = enMode.AddNew;
-        public int ApplicationTypeID { set;get; }
+        public int ApplicationTypeID { set; get; }
 
         private clsApplicationTypeDTO _ADTO;
         public clsApplicationTypeDTO ApplicationTypeDTO
@@ -40,13 +40,13 @@ namespace Business_DVLD
         }
         public bool _AddNewApplicationType()
         {
-            this.ApplicationTypeID = clsApplicationTypeData.AddNewApplicationType(ApplicationTypeDTO);
+            this.ApplicationTypeID = clsApplicationTypeData.AddNewApplicationType(_ADTO);
 
             return (this.ApplicationTypeID != -1);
         }
         public bool _UpdateApplicationType()
         {
-            return clsApplicationTypeData.UpdateApplicationType(ApplicationTypeDTO);
+            return clsApplicationTypeData.UpdateApplicationType(_ADTO);
         }
         
         public static List<clsApplicationTypeDTO> GetAllApplicationTypes()

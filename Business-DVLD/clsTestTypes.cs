@@ -29,13 +29,13 @@ namespace Business_DVLD
         }
         private bool _AddNewTestType()
         {
-            this.ID= (enTestType)clsTestTypeData.AddNewTestType(testTypeDTO);
+            this.ID= (enTestType)clsTestTypeData.AddNewTestType(_TTDTO);
             return ( this._TTDTO.Title != "");
         }
 
         private bool _UpdateTestType()
         {
-            return clsTestTypeData.UpdateTestType(testTypeDTO);
+            return clsTestTypeData.UpdateTestType(_TTDTO);
         }
         public  static clsTestTypes FindTestTypeByID(enTestType testTypeID)
         {

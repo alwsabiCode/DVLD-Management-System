@@ -28,7 +28,7 @@ namespace DVLD_System.Licenses.International_Licenses.Controls
         }
         private void _LoadPersonImage()
         {
-            if (_InternationalLicense.DriverInfo.PersonInfo.PDTO.Gendor == 0)
+            if (_InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.Gendor == 0)
             {
                 pbPersonImage.Image = Resources.Male_512;
                 pbGendor.Image = Resources.Man_32;
@@ -38,7 +38,7 @@ namespace DVLD_System.Licenses.International_Licenses.Controls
                 pbPersonImage.Image = Resources.Female_512;
                 pbGendor.Image = Resources.Woman_32;
             }
-            string ImagePath = _InternationalLicense.DriverInfo.PersonInfo.PDTO.ImagePath;
+            string ImagePath = _InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.ImagePath;
 
             if (ImagePath != "")
                 if (File.Exists(ImagePath))
@@ -63,10 +63,10 @@ namespace DVLD_System.Licenses.International_Licenses.Controls
             lblApplicationID.Text = _InternationalLicense.ApplicationID.ToString();
             lblIsActive.Text = _InternationalLicense.InternationalDTO.IsActive ? "Yes" : "No";
             lblLocalLicenseID.Text = _InternationalLicense.InternationalDTO.IssuedUsingLocalLicenseID.ToString();
-            lblFullName.Text = _InternationalLicense.DriverInfo.PersonInfo.PDTO.FullName;
-            lblNationalNo.Text = _InternationalLicense.DriverInfo.PersonInfo.PDTO.NationalNo;
-            lblGendor.Text = _InternationalLicense.DriverInfo.PersonInfo.PDTO.Gendor == 0 ? "Male" : "Female";
-            lblDateOfBirth.Text = clsFormat.DateToShort(_InternationalLicense.DriverInfo.PersonInfo.PDTO.DateOfBirth);
+            lblFullName.Text = _InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.FullName;
+            lblNationalNo.Text = _InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.NationalNo;
+            lblGendor.Text = _InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.Gendor == 0 ? "Male" : "Female";
+            lblDateOfBirth.Text = clsFormat.DateToShort(_InternationalLicense.DriverInfo.PersonInfo.PeopleDTO.DateOfBirth);
 
             lblDriverID.Text = _InternationalLicense.InternationalDTO.DriverID.ToString();
             lblIssueDate.Text = clsFormat.DateToShort(_InternationalLicense.InternationalDTO.IssueDate);

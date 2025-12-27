@@ -22,7 +22,7 @@ namespace Business_DVLD
         {
             get
             {
-                return base.PersonInfo.PDTO.FullName;
+                return base.PersonInfo.PeopleDTO.FullName;
             }
         }
 

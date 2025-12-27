@@ -43,7 +43,7 @@ namespace DVLD_System.Applications.Controls
             lblStatus.Text = _Application.StatusText;
             lblType.Text = _Application.ApplicationTypeInfo.ApplicationTypeDTO.ApplicationTypeTitle;
             lblFees.Text = _Application.ApplicatDTO.PaidFees.ToString();
-            lblApplicant.Text = _Application.PersonInfo.PDTO.FullName;
+            lblApplicant.Text = _Application.PersonInfo.PeopleDTO.FullName;
             lblDate.Text = clsFormat.DateToShort(_Application.ApplicatDTO.ApplicationDate);
             lblStatusDate.Text = clsFormat.DateToShort(_Application.ApplicatDTO.LastStatusDate);
             lblCreatedByUser.Text = _Application.CreatedByUserInfo.UserDTO.Username;
