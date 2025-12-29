@@ -21,9 +21,7 @@ namespace DVLD_System.Licenses.Controls
         private clsDriver _driver;
 
         private static List<clsDriverLicensesViewDTO> _ListDriverLocalLicensesHistory;
-        private List<clsDriverLicensesViewDTO> _FilterDriverLocalLicensesHistory;
         private static List<clsDriverInternationalLicensesViewDTO> _ListDriverInternationalLicensesHistory;
-        private List<clsDriverInternationalLicensesViewDTO> _FilterDriverInternationalLicensesHistory;
 
         public ctrlDriverLicenses()
         {
@@ -39,8 +37,8 @@ namespace DVLD_System.Licenses.Controls
                 D.ApplicationID,
                 D.ClassName,
                 IssueDate=clsFormat.DateToShort (D.IssueDate),
-                ExpirationDate=clsFormat.DateToShort( D.ExpirationDate),
-                IsActive= (D.IsActive==false)?"No": "Yes"
+                ExpirationDate=clsFormat.DateToShort(D.ExpirationDate),
+                IsActive= (D.IsActive==false)? "No": "Yes"
                 
 
             }).ToList();

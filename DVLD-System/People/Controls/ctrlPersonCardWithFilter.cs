@@ -85,11 +85,6 @@ namespace DVLD_System.People.Controls
                 OnPersonSelected(ctrlPersonCards1.PersonID);
             }
         }
-        private void ctrlPersonCards1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
             cbFilter.SelectedIndex = 0;
@@ -155,12 +150,5 @@ namespace DVLD_System.People.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
-
-        private void txtFilter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

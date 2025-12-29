@@ -95,7 +95,6 @@
             this.gbTestType.TabIndex = 0;
             this.gbTestType.TabStop = false;
             this.gbTestType.Text = "Test Type";
-            this.gbTestType.Enter += new System.EventHandler(this.gbTestType_Enter);
             // 
             // lblTestID
             // 
@@ -362,7 +361,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ctrlSecheduledTest";
             this.Size = new System.Drawing.Size(744, 417);
-            this.Load += new System.EventHandler(this.ctrlSecheduledTest_Load);
             this.gbTestType.ResumeLayout(false);
             this.gbTestType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

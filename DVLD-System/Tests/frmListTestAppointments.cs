@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business_DVLD;
 using DVLD_System.Global_Classes;
 
 namespace DVLD_System.Tests
@@ -108,8 +107,6 @@ namespace DVLD_System.Tests
                 MessageBox.Show("Person Already have an active appointment for this test, You cannot add new appointment", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
 
             //---
             clsTest LastTest = localDrivingLicenseApplication.GetLastTestPerTestType(_TestType);

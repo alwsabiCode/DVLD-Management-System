@@ -103,13 +103,13 @@
             // llViewPersonInfo
             // 
             this.llViewPersonInfo.AutoSize = true;
-            this.llViewPersonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llViewPersonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llViewPersonInfo.Location = new System.Drawing.Point(546, 168);
             this.llViewPersonInfo.Name = "llViewPersonInfo";
-            this.llViewPersonInfo.Size = new System.Drawing.Size(126, 16);
+            this.llViewPersonInfo.Size = new System.Drawing.Size(145, 20);
             this.llViewPersonInfo.TabIndex = 187;
             this.llViewPersonInfo.TabStop = true;
-            this.llViewPersonInfo.Text = "View Person Info.";
+            this.llViewPersonInfo.Text = "View Person Info";
             this.llViewPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llViewPersonInfo_LinkClicked);
             // 
             // lblStatusDate
@@ -376,7 +376,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlApplicationBasicInfo";
             this.Size = new System.Drawing.Size(748, 246);
-            this.Load += new System.EventHandler(this.ctrlApplicationBasicInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

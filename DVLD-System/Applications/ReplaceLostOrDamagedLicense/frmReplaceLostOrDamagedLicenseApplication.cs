@@ -1,5 +1,4 @@
 ﻿using Business_DVLD;
-using Business_DVLD;
 using DVLD_System.Global_Classes;
 using DVLD_System.Licenses;
 using DVLD_System.Licenses.Local_Licenses;
@@ -50,8 +49,6 @@ namespace DVLD_System.Applications.ReplaceLostOrDamagedLicense
         private void btnNext_Click(object sender, EventArgs e)
         {
             tcReplacement.SelectedTab = tcReplacement.TabPages["tpReplacement"];
-
-
         }
 
         private void frmReplaceLostOrDamagedLicenseApplication_Load(object sender, EventArgs e)

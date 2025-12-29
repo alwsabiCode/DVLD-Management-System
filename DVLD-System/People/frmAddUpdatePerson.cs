@@ -349,10 +349,6 @@ namespace DVLD_System.People
           
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
     

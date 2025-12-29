@@ -50,14 +50,11 @@ namespace DVLD_System.Applications.Rlease_Detained_License
                 return;
 
             }
-
-           
             //ToDo: make sure the license is not detained already.
             if (!ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.IsDetained)
             {
                 MessageBox.Show("Selected License i is not detained, choose another one.", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                tpDetainInfo.Enabled = true;
+                ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
                 btnRelease.Enabled = false;
                 return;
             }
@@ -126,9 +123,6 @@ namespace DVLD_System.Applications.Rlease_Detained_License
             tcDetainelLicense.SelectedTab = tcDetainelLicense.TabPages["tpDetainInfo"];
         }
 
-        private void frmReleaseDetainedLicenseApplication_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

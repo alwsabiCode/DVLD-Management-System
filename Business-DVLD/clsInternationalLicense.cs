@@ -51,13 +51,9 @@ namespace Business_DVLD
         }
         private bool _AddInternationalLicense()
         {
-            int NewID = clsInternationalLicenseData.AddInternationalLicense(_ILDTO);
-            if (NewID <= 0)
-            {
-                return false;
-            }
-            this.InternationalLicenseID = NewID;
-            return true;
+            this.InternationalLicenseID = clsInternationalLicenseData.AddInternationalLicense(_ILDTO);
+            return (this.InternationalLicenseID != -1);
+           
         }
         private bool _UpdateInternationalLicense()
         {
@@ -74,6 +70,7 @@ namespace Business_DVLD
             {
                 return false;
             }
+
             InternationalDTO.ApplicationID = base.ApplicationID;
 
             switch (Mode)

@@ -124,14 +124,5 @@ namespace DVLD_System.Tests.Controls
             InitializeComponent();
         }
 
-        private void gbTestType_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ctrlSecheduledTest_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

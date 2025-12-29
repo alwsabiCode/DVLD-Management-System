@@ -66,6 +66,7 @@
             // MSMain
             // 
             this.MSMain.BackColor = System.Drawing.Color.White;
+            this.MSMain.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MSMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMApplications,
             this.TMSPeople,
@@ -387,7 +388,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DVLD-System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.MSMain.ResumeLayout(false);
             this.MSMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

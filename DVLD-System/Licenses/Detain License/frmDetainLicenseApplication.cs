@@ -83,6 +83,7 @@ namespace DVLD_System.Licenses.Detain_License
             {
                 MessageBox.Show("Selected License i already detained, choose another one.", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnDetain.Enabled = false;
+                ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
                 return;
             }
 

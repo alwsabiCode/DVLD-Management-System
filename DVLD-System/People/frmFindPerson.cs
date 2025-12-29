@@ -20,11 +20,6 @@ namespace DVLD_System.People
             InitializeComponent();
         }
 
-        private void frmFindPerson_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             DataBack?.Invoke(this, ctrlPersonCardWithFilter1.PersonID);

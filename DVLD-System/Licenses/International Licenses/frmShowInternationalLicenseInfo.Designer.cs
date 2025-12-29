@@ -30,8 +30,8 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbTestTypeImage = new System.Windows.Forms.PictureBox();
-            this.ctrlDriverInternationalLicenseInfo1 = new DVLD_System.Licenses.International_Licenses.Controls.ctrlDriverInternationalLicenseInfo();
             this.btnClose = new System.Windows.Forms.Button();
+            this.ctrlDriverInternationalLicenseInfo1 = new DVLD_System.Licenses.International_Licenses.Controls.ctrlDriverInternationalLicenseInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestTypeImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,14 +59,6 @@
             this.pbTestTypeImage.TabIndex = 139;
             this.pbTestTypeImage.TabStop = false;
             // 
-            // ctrlDriverInternationalLicenseInfo1
-            // 
-            this.ctrlDriverInternationalLicenseInfo1.BackColor = System.Drawing.Color.White;
-            this.ctrlDriverInternationalLicenseInfo1.Location = new System.Drawing.Point(2, 155);
-            this.ctrlDriverInternationalLicenseInfo1.Name = "ctrlDriverInternationalLicenseInfo1";
-            this.ctrlDriverInternationalLicenseInfo1.Size = new System.Drawing.Size(869, 274);
-            this.ctrlDriverInternationalLicenseInfo1.TabIndex = 141;
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
@@ -81,14 +73,22 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ctrlDriverInternationalLicenseInfo1
+            // 
+            this.ctrlDriverInternationalLicenseInfo1.BackColor = System.Drawing.Color.White;
+            this.ctrlDriverInternationalLicenseInfo1.Location = new System.Drawing.Point(1, 150);
+            this.ctrlDriverInternationalLicenseInfo1.Name = "ctrlDriverInternationalLicenseInfo1";
+            this.ctrlDriverInternationalLicenseInfo1.Size = new System.Drawing.Size(869, 274);
+            this.ctrlDriverInternationalLicenseInfo1.TabIndex = 206;
+            // 
             // frmShowInternationalLicenseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(870, 488);
-            this.Controls.Add(this.btnClose);
+            this.ClientSize = new System.Drawing.Size(870, 482);
             this.Controls.Add(this.ctrlDriverInternationalLicenseInfo1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbTestTypeImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -105,7 +105,7 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbTestTypeImage;
-        private Controls.ctrlDriverInternationalLicenseInfo ctrlDriverInternationalLicenseInfo1;
         private System.Windows.Forms.Button btnClose;
+        private Controls.ctrlDriverInternationalLicenseInfo ctrlDriverInternationalLicenseInfo1;
     }
 }

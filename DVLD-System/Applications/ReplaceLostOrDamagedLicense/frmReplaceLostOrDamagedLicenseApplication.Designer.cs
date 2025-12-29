@@ -77,9 +77,9 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblTitle.Location = new System.Drawing.Point(31, 9);
+            this.lblTitle.Location = new System.Drawing.Point(31, 26);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(875, 39);
+            this.lblTitle.Size = new System.Drawing.Size(895, 39);
             this.lblTitle.TabIndex = 184;
             this.lblTitle.Text = "License Replacement";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,7 +111,7 @@
             this.btnNext.BackColor = System.Drawing.Color.White;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Image = global::DVLD_System.Properties.Resources.Next_32;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.Location = new System.Drawing.Point(739, 398);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(125, 44);
@@ -180,10 +180,10 @@
             // 
             this.llShowLicenseInfo.AutoSize = true;
             this.llShowLicenseInfo.Enabled = false;
-            this.llShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseInfo.Location = new System.Drawing.Point(241, 316);
             this.llShowLicenseInfo.Name = "llShowLicenseInfo";
-            this.llShowLicenseInfo.Size = new System.Drawing.Size(148, 20);
+            this.llShowLicenseInfo.Size = new System.Drawing.Size(166, 20);
             this.llShowLicenseInfo.TabIndex = 195;
             this.llShowLicenseInfo.TabStop = true;
             this.llShowLicenseInfo.Text = "Show Licenses Info";
@@ -193,10 +193,10 @@
             // 
             this.llShowLicenseHistory.AutoSize = true;
             this.llShowLicenseHistory.Enabled = false;
-            this.llShowLicenseHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llShowLicenseHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseHistory.Location = new System.Drawing.Point(58, 316);
             this.llShowLicenseHistory.Name = "llShowLicenseHistory";
-            this.llShowLicenseHistory.Size = new System.Drawing.Size(169, 20);
+            this.llShowLicenseHistory.Size = new System.Drawing.Size(190, 20);
             this.llShowLicenseHistory.TabIndex = 194;
             this.llShowLicenseHistory.TabStop = true;
             this.llShowLicenseHistory.Text = "Show Licenses History";
@@ -435,9 +435,10 @@
             // rbLostLicense
             // 
             this.rbLostLicense.AutoSize = true;
+            this.rbLostLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLostLicense.Location = new System.Drawing.Point(211, 34);
             this.rbLostLicense.Name = "rbLostLicense";
-            this.rbLostLicense.Size = new System.Drawing.Size(117, 24);
+            this.rbLostLicense.Size = new System.Drawing.Size(129, 24);
             this.rbLostLicense.TabIndex = 2;
             this.rbLostLicense.Text = "Lost License";
             this.rbLostLicense.UseVisualStyleBackColor = true;
@@ -446,9 +447,10 @@
             // rbDamagedLicense
             // 
             this.rbDamagedLicense.AutoSize = true;
+            this.rbDamagedLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDamagedLicense.Location = new System.Drawing.Point(27, 34);
             this.rbDamagedLicense.Name = "rbDamagedLicense";
-            this.rbDamagedLicense.Size = new System.Drawing.Size(156, 24);
+            this.rbDamagedLicense.Size = new System.Drawing.Size(171, 24);
             this.rbDamagedLicense.TabIndex = 0;
             this.rbDamagedLicense.Text = "Damaged License";
             this.rbDamagedLicense.UseVisualStyleBackColor = true;

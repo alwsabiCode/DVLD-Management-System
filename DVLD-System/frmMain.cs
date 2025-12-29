@@ -30,12 +30,6 @@ namespace DVLD_System
             InitializeComponent();
             _frmLogin = frmLogin;
         }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void TMSPeople_Click(object sender, EventArgs e)
         {
             frmListPeople frm = new frmListPeople();

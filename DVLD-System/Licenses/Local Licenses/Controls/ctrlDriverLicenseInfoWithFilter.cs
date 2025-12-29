@@ -63,12 +63,6 @@ namespace DVLD_System.Licenses.Local_Licenses.Controls
 
 
         }
-
-        private void ctrlDriverLicenseInfoWithFilter_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtLicenseID_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

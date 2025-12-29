@@ -219,9 +219,6 @@ namespace DVLD_System.Users
             this.Close();
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

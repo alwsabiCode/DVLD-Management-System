@@ -96,7 +96,7 @@
             this.tcDetainelLicense.Location = new System.Drawing.Point(18, 44);
             this.tcDetainelLicense.Name = "tcDetainelLicense";
             this.tcDetainelLicense.SelectedIndex = 0;
-            this.tcDetainelLicense.Size = new System.Drawing.Size(888, 501);
+            this.tcDetainelLicense.Size = new System.Drawing.Size(888, 490);
             this.tcDetainelLicense.TabIndex = 188;
             // 
             // tpLicenseInfo
@@ -106,7 +106,7 @@
             this.tpLicenseInfo.Location = new System.Drawing.Point(4, 29);
             this.tpLicenseInfo.Name = "tpLicenseInfo";
             this.tpLicenseInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLicenseInfo.Size = new System.Drawing.Size(880, 468);
+            this.tpLicenseInfo.Size = new System.Drawing.Size(880, 457);
             this.tpLicenseInfo.TabIndex = 0;
             this.tpLicenseInfo.Text = "License Info";
             this.tpLicenseInfo.UseVisualStyleBackColor = true;
@@ -116,8 +116,8 @@
             this.btnNext.BackColor = System.Drawing.Color.White;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Image = global::DVLD_System.Properties.Resources.Next_32;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(738, 397);
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(738, 405);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(125, 44);
             this.btnNext.TabIndex = 189;
@@ -147,7 +147,7 @@
             this.tpDetainInfo.Location = new System.Drawing.Point(4, 29);
             this.tpDetainInfo.Name = "tpDetainInfo";
             this.tpDetainInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDetainInfo.Size = new System.Drawing.Size(880, 468);
+            this.tpDetainInfo.Size = new System.Drawing.Size(880, 457);
             this.tpDetainInfo.TabIndex = 1;
             this.tpDetainInfo.Text = "Detain Info";
             this.tpDetainInfo.UseVisualStyleBackColor = true;
@@ -185,10 +185,10 @@
             // 
             this.llShowLicenseInfo.AutoSize = true;
             this.llShowLicenseInfo.Enabled = false;
-            this.llShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseInfo.Location = new System.Drawing.Point(232, 286);
             this.llShowLicenseInfo.Name = "llShowLicenseInfo";
-            this.llShowLicenseInfo.Size = new System.Drawing.Size(148, 20);
+            this.llShowLicenseInfo.Size = new System.Drawing.Size(166, 20);
             this.llShowLicenseInfo.TabIndex = 199;
             this.llShowLicenseInfo.TabStop = true;
             this.llShowLicenseInfo.Text = "Show Licenses Info";
@@ -198,10 +198,10 @@
             // 
             this.llShowLicenseHistory.AutoSize = true;
             this.llShowLicenseHistory.Enabled = false;
-            this.llShowLicenseHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llShowLicenseHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseHistory.Location = new System.Drawing.Point(49, 286);
             this.llShowLicenseHistory.Name = "llShowLicenseHistory";
-            this.llShowLicenseHistory.Size = new System.Drawing.Size(169, 20);
+            this.llShowLicenseHistory.Size = new System.Drawing.Size(190, 20);
             this.llShowLicenseHistory.TabIndex = 198;
             this.llShowLicenseHistory.TabStop = true;
             this.llShowLicenseHistory.Text = "Show Licenses History";
@@ -501,7 +501,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(913, 557);
+            this.ClientSize = new System.Drawing.Size(913, 533);
             this.Controls.Add(this.tcDetainelLicense);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -509,7 +509,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Release Detained License Application";
             this.Activated += new System.EventHandler(this.frmReleaseDetainedLicenseApplication_Activated);
-            this.Load += new System.EventHandler(this.frmReleaseDetainedLicenseApplication_Load);
             this.tcDetainelLicense.ResumeLayout(false);
             this.tpLicenseInfo.ResumeLayout(false);
             this.tpDetainInfo.ResumeLayout(false);

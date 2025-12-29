@@ -110,7 +110,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox2
             // 
@@ -256,7 +255,6 @@
             this.lblDateOfBirth.Size = new System.Drawing.Size(49, 16);
             this.lblDateOfBirth.TabIndex = 134;
             this.lblDateOfBirth.Text = "[????]";
-            this.lblDateOfBirth.Click += new System.EventHandler(this.lblDateOfBirth_Click);
             // 
             // lblAddress
             // 
@@ -423,7 +421,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlPersonCards";
             this.Size = new System.Drawing.Size(796, 349);
-            this.Load += new System.EventHandler(this.ctrlPersonCards_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

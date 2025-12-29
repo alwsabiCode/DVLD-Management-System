@@ -14,7 +14,7 @@ namespace DVLD_System.Tests.Test_Types
 {
     public partial class frmListTestType : Form
     {
-        private List<clsTestTypeDTO>_ListTestTypes=new List<clsTestTypeDTO>();
+        private List<clsTestTypeDTO> _ListTestTypes;
         public frmListTestType()
         {
             InitializeComponent();

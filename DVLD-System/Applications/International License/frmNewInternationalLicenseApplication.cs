@@ -24,14 +24,6 @@ namespace DVLD_System.Applications.International_License
         {
             InitializeComponent();
         }
-
-        private void ctrlDriverLicenseInfoWithFilter1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
         private void frmNewInternationalLicenseApplication_Load(object sender, EventArgs e)
         {
             lblApplicationDate.Text = clsFormat.DateToShort(DateTime.Now);
@@ -132,12 +124,14 @@ namespace DVLD_System.Applications.International_License
             {
                 MessageBox.Show("Selected License should be Class 3, select another one.", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+                btnIssueLicense.Enabled = false;    
+           
             }
             int ActiveInternaionalLicenseID = clsInternationalLicense.
                 GetActiveInternationalLicenseIDByDriverID(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.licenseDTO.DriverID);
             if (ActiveInternaionalLicenseID != -1)
             {
-                MessageBox.Show("Person already have an active international license with ID = " + ActiveInternaionalLicenseID.ToString(), "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Person already has an active international license with ID = " + ActiveInternaionalLicenseID.ToString(), "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 llShowLicenseInfo.Enabled = true;
                 _InternationalLicenseID = ActiveInternaionalLicenseID;
                 btnIssueLicense.Enabled = false;
@@ -145,7 +139,6 @@ namespace DVLD_System.Applications.International_License
                 return;
             }
             btnIssueLicense.Enabled = true;
-            tpApplicationInfo.Enabled = true;
         }
     }
 }

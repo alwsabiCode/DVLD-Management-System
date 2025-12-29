@@ -15,32 +15,17 @@ namespace DVLD_System.Users
 {
     public partial class frmListUsers : Form
     {
-        private static List<clsUserDTO> _ListUser = clsUser.GetAllUsers();
-        private static List<clsUserDTO> _FilterUsers = new List<clsUserDTO>(_ListUser);
+        private static List<clsUserDTO> _ListUser ;
+        private static List<clsUserDTO> _FilterUsers;
         public frmListUsers()
         {
             InitializeComponent();
         }
-
-        private void _RefreshUsers()
+        private void frmListUsers_Load(object sender, EventArgs e)
         {
             _ListUser = clsUser.GetAllUsers();
             _FilterUsers = new List<clsUserDTO>(_ListUser);
-            var CustomList = _FilterUsers.Select(P => new
-            {
-                P.UserID,
-                P.PersonID,
-                P.FullName,
-                P.Username,
-                IsActive = (P.IsActive == false) ? "No" : "Yes"
-            }).ToList();
-            dgvUsers.DataSource = CustomList;
-            lblRecordCount.Text = dgvUsers.Rows.Count.ToString();
-        }
-
-        private void frmListUsers_Load(object sender, EventArgs e)
-        {
-             dgvUsers.DataSource = _FilterUsers.
+            dgvUsers.DataSource = _FilterUsers.
                            Select(P => new
                            {
                                P.UserID,
@@ -76,7 +61,7 @@ namespace DVLD_System.Users
         {
             frmAddUpdateUsers frm= new frmAddUpdateUsers();
             frm.ShowDialog();
-            _RefreshUsers();
+            frmListUsers_Load(null,null);
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,7 +118,7 @@ namespace DVLD_System.Users
             List<clsUserDTO> ListUser = new List<clsUserDTO>();
             if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
             {
-                _RefreshUsers();
+                frmListUsers_Load(null, null);
             }
             if (FilterColumn == "UserID")
             {
@@ -195,7 +180,7 @@ namespace DVLD_System.Users
             // All → عرض كل المستخدمين
             if (filter == "All")
             {
-                _RefreshUsers();
+                frmListUsers_Load(null, null);
                 return;
             }
 
@@ -222,7 +207,7 @@ namespace DVLD_System.Users
         {
             frmAddUpdateUsers frm=new frmAddUpdateUsers();
             frm.ShowDialog();
-           _RefreshUsers();
+            frmListUsers_Load(null, null);
 
         }
 
@@ -236,7 +221,7 @@ namespace DVLD_System.Users
         {
             frmAddUpdateUsers frm = new frmAddUpdateUsers((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
-            _RefreshUsers();
+            frmListUsers_Load(null, null);
         }
 
         private void TSMSendEmail_Click(object sender, EventArgs e)
@@ -271,7 +256,7 @@ namespace DVLD_System.Users
                 {
                     MessageBox.Show("User has been deleted successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
-                    _RefreshUsers();
+                    frmListUsers_Load(null, null);
                 }
 
                 else

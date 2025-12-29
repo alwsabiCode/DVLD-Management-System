@@ -70,14 +70,7 @@ namespace DVLD_System.Applications.Local_Driving_License.controls
             ctrlApplicationBasicInfo1.ResetApplicationInfo();
             lblLocalDrivingLicenseApplicationID.Text = "[????]";
             lblAppliedFor.Text = "[????]";
-
-
         }
-        private void ctrlDrivingLicenseApplicationInfo_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void llShowLicenceInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmShowLicenseInfo frm = new frmShowLicenseInfo(_localDrivingLicenseApplication.GetActiveLicenseID());

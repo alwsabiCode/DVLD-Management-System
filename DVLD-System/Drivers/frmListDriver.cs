@@ -15,7 +15,7 @@ namespace DVLD_System.Drivers
 {
     public partial class frmListDriver : Form
     {
-        private List<clsDriverViewDTO> _ListDrivers = clsDriver.GetAllDrivers();
+        private List<clsDriverViewDTO> _ListDrivers ;
         public frmListDriver()
         {
             InitializeComponent();

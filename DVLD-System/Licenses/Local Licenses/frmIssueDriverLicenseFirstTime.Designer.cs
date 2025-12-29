@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_System.Properties.Resources.Notes_32;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 374);
+            this.pictureBox1.Location = new System.Drawing.Point(97, 374);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -50,21 +50,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 374);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 374);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 177;
             this.label1.Text = "Notes:";
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(116, 374);
+            this.txtNotes.Location = new System.Drawing.Point(129, 374);
             this.txtNotes.MaxLength = 500;
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(561, 82);
+            this.txtNotes.Size = new System.Drawing.Size(593, 60);
             this.txtNotes.TabIndex = 176;
             // 
             // btnIssue
@@ -74,7 +74,7 @@
             this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.Image = global::DVLD_System.Properties.Resources.License_Type_32;
             this.btnIssue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIssue.Location = new System.Drawing.Point(535, 467);
+            this.btnIssue.Location = new System.Drawing.Point(580, 446);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(142, 44);
             this.btnIssue.TabIndex = 179;
@@ -89,7 +89,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_System.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(404, 467);
+            this.btnClose.Location = new System.Drawing.Point(438, 446);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(125, 44);
             this.btnClose.TabIndex = 180;
@@ -99,9 +99,9 @@
             // ctrlDrivingLicenseApplicationInfo1
             // 
             this.ctrlDrivingLicenseApplicationInfo1.BackColor = System.Drawing.Color.White;
-            this.ctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(-2, 0);
+            this.ctrlDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(-3, 0);
             this.ctrlDrivingLicenseApplicationInfo1.Name = "ctrlDrivingLicenseApplicationInfo1";
-            this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(710, 384);
+            this.ctrlDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(734, 368);
             this.ctrlDrivingLicenseApplicationInfo1.TabIndex = 0;
             // 
             // frmIssueDriverLicenseFirstTime
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(702, 516);
+            this.ClientSize = new System.Drawing.Size(737, 498);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.pictureBox1);

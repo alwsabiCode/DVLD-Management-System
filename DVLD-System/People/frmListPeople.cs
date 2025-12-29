@@ -15,42 +15,18 @@ namespace DVLD_System
 {
     public partial class frmListPeople : Form
     {
-        private static List<clsPersonDTO> _PeopleList = clsPerson.GetAllPeople();
+        private static List<clsPersonDTO> _PeopleList;
 
-        private static List<clsPersonDTO> _FilteredPeopleList = new List<clsPersonDTO>(_PeopleList);
-
-
-
+        private static List<clsPersonDTO> _FilteredPeopleList;
         public frmListPeople()
         {
             InitializeComponent();
         }
-        private void _RefreshPeopleList()
+      
+        private void frmPeople_Load(object sender, EventArgs e)
         {
             _PeopleList = clsPerson.GetAllPeople();
             _FilteredPeopleList = new List<clsPersonDTO>(_PeopleList);
-            var CustomList = _FilteredPeopleList.
-                Select(P => new
-                {
-                    P.PersonID,
-                    P.NationalNo,
-                    P.FirstName,
-                    P.SecondName,
-                    P.ThirdName,
-                    P.LastName,
-                    P.DateOfBirth,
-                    Gendor = (P.Gendor == 0) ? "Male" : "Female",
-                    P.CountryName,
-                    P.Phone,
-                    P.Email, 
-
-
-                }).ToList();
-            DGVPeople.DataSource = CustomList;
-            lblRecordCount.Text = DGVPeople.Rows.Count.ToString();
-        }
-        private void frmPeople_Load(object sender, EventArgs e)
-        {
             DGVPeople.DataSource = _FilteredPeopleList.
                 Select(P => new
                 {
@@ -153,7 +129,7 @@ namespace DVLD_System
             List<clsPersonDTO> ListPerson = new List<clsPersonDTO>();
             if (txtfilter.Text.Trim() == "" || FilterColumn == "None")
             {
-                _RefreshPeopleList();
+                frmPeople_Load(null,null);
                 return;
             }
 
@@ -296,7 +272,7 @@ namespace DVLD_System
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
-            _RefreshPeopleList();
+            frmPeople_Load(null,null);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -304,14 +280,14 @@ namespace DVLD_System
             frmAddUpdatePerson frm = new frmAddUpdatePerson();
             frm.ShowDialog();
 
-            _RefreshPeopleList();
+            frmPeople_Load(null, null);
         }
 
         private void TSMEdit_Click(object sender, EventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson((int)DGVPeople.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
-            _RefreshPeopleList();
+            frmPeople_Load(null, null);
         }
 
         private void DGVPeople_DoubleClick(object sender, EventArgs e)
@@ -336,8 +312,8 @@ namespace DVLD_System
                 if (clsPerson.DeletePerson((int)DGVPeople.CurrentRow.Cells[0].Value))
                 {
                     MessageBox.Show("Person Deleted Successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                    _RefreshPeopleList();
+
+                    frmPeople_Load(null, null);
                 }
 
                 else

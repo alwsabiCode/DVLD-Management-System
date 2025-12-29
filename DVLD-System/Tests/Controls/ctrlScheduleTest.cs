@@ -326,14 +326,5 @@ namespace DVLD_System.Tests.Controls
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ctrlScheduleTest_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

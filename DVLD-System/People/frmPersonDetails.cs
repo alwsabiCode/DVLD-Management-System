@@ -26,10 +26,5 @@ namespace DVLD_System.People
         {
             this.Close();
         }
-
-        private void frmPersonDetails_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

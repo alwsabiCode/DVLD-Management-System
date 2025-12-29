@@ -135,7 +135,7 @@
             "None",
             "Detain ID",
             "Is Released",
-            "National No.",
+            "National No",
             "Full Name",
             "Release Application ID"});
             this.cbFilterBy.Location = new System.Drawing.Point(96, 190);
@@ -246,6 +246,7 @@
             this.releaseDetainedLicenseToolStripMenuItem});
             this.cmsApplications.Name = "contextMenuStrip1";
             this.cmsApplications.Size = new System.Drawing.Size(242, 162);
+            this.cmsApplications.Opening += new System.ComponentModel.CancelEventHandler(this.cmsApplications_Opening);
             // 
             // PesonDetailsToolStripMenuItem
             // 

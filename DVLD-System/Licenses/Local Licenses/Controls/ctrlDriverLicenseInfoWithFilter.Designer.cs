@@ -45,7 +45,7 @@
             this.gbFilters.Controls.Add(this.txtLicenseID);
             this.gbFilters.Controls.Add(this.label1);
             this.gbFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFilters.Location = new System.Drawing.Point(235, 0);
+            this.gbFilters.Location = new System.Drawing.Point(235, 6);
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.Size = new System.Drawing.Size(401, 63);
             this.gbFilters.TabIndex = 18;
@@ -106,7 +106,6 @@
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlDriverLicenseInfoWithFilter";
             this.Size = new System.Drawing.Size(878, 389);
-            this.Load += new System.EventHandler(this.ctrlDriverLicenseInfoWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

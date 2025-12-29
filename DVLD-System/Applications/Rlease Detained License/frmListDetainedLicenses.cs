@@ -19,7 +19,7 @@ namespace DVLD_System.Applications.Rlease_Detained_License
 {
     public partial class frmListDetainedLicenses : Form
     {
-        private static List<clsDetainedLicenseViewDTO> _DetainedLicenses = clsDetainedLicense.GetAllDetainedLicenses();
+        private static List<clsDetainedLicenseViewDTO> _DetainedLicenses;
         public frmListDetainedLicenses()
         {
             InitializeComponent();
@@ -30,50 +30,60 @@ namespace DVLD_System.Applications.Rlease_Detained_License
             cbFilterBy.SelectedIndex = 0;
 
             _DetainedLicenses = clsDetainedLicense.GetAllDetainedLicenses();
+
             dgvDetainedLicenses.DataSource = _DetainedLicenses.Select(d => new
             {
                 d.DetainID,
                 d.LicenseID,
                 d.DetainDate,
-                IsReleased= d.IsReleased? "Yes":"No",
+
+                IsReleased = d.IsReleased,                   // للمنطق فقط
+                ReleasedStatus = d.IsReleased ? "Yes" : "No", // للعرض
+
                 d.FineFees,
                 d.ReleaseDate,
                 d.NationalNo,
                 d.FullName,
                 d.ReleaseApplicationID
             }).ToList();
+
             lblRecordCount.Text = dgvDetainedLicenses.Rows.Count.ToString();
 
-            if (dgvDetainedLicenses.Rows.Count > 0)
-            {
-                dgvDetainedLicenses.Columns[0].HeaderText = "D.ID";
-                dgvDetainedLicenses.Columns[0].Width = 90;
+            SetupDetainedLicensesGrid();
+        }
+        private void SetupDetainedLicensesGrid()
+        {
+            if (dgvDetainedLicenses.Rows.Count == 0)
+                return;
 
-                dgvDetainedLicenses.Columns[1].HeaderText = "L.ID";
-                dgvDetainedLicenses.Columns[1].Width = 90;
+            dgvDetainedLicenses.Columns["IsReleased"].Visible = false;
 
-                dgvDetainedLicenses.Columns[2].HeaderText = "D.Date";
-                dgvDetainedLicenses.Columns[2].Width = 160;
+            dgvDetainedLicenses.Columns["DetainID"].HeaderText = "D.ID";
+            dgvDetainedLicenses.Columns["DetainID"].Width = 80;
 
-                dgvDetainedLicenses.Columns[3].HeaderText = "Is Released";
-                dgvDetainedLicenses.Columns[3].Width = 110;
+            dgvDetainedLicenses.Columns["LicenseID"].HeaderText = "L.ID";
+            dgvDetainedLicenses.Columns["LicenseID"].Width = 80;
 
-                dgvDetainedLicenses.Columns[4].HeaderText = "Fine Fees";
-                dgvDetainedLicenses.Columns[4].Width = 110;
+            dgvDetainedLicenses.Columns["DetainDate"].HeaderText = "D.Date";
+            dgvDetainedLicenses.Columns["DetainDate"].Width = 130;
 
-                dgvDetainedLicenses.Columns[5].HeaderText = "Release Date";
-                dgvDetainedLicenses.Columns[5].Width = 160;
+            dgvDetainedLicenses.Columns["ReleasedStatus"].HeaderText = "Released";
+            dgvDetainedLicenses.Columns["ReleasedStatus"].Width = 90;
 
-                dgvDetainedLicenses.Columns[6].HeaderText = "N.No.";
-                dgvDetainedLicenses.Columns[6].Width = 90;
+            dgvDetainedLicenses.Columns["FineFees"].HeaderText = "Fine Fees";
+            dgvDetainedLicenses.Columns["FineFees"].Width = 80;
 
-                dgvDetainedLicenses.Columns[7].HeaderText = "Full Name";
-                dgvDetainedLicenses.Columns[7].Width = 330;
+            dgvDetainedLicenses.Columns["ReleaseDate"].HeaderText = "Release Date";
+            dgvDetainedLicenses.Columns["ReleaseDate"].Width = 130;
 
-                dgvDetainedLicenses.Columns[8].HeaderText = "Rlease App.ID";
-                dgvDetainedLicenses.Columns[8].Width = 100;
+            dgvDetainedLicenses.Columns["NationalNo"].HeaderText = "N.No.";
+            dgvDetainedLicenses.Columns["NationalNo"].Width = 80;
 
-            }
+            dgvDetainedLicenses.Columns["FullName"].HeaderText = "Full Name";
+            dgvDetainedLicenses.Columns["FullName"].Width = 330;
+
+            dgvDetainedLicenses.Columns["ReleaseApplicationID"].HeaderText = "Release App.ID";
+            dgvDetainedLicenses.Columns["ReleaseApplicationID"].Width = 100;
         }
 
         private void btnReleaseDetainedLicense_Click(object sender, EventArgs e)
@@ -169,17 +179,20 @@ namespace DVLD_System.Applications.Rlease_Detained_License
                 filtered = _DetainedLicenses.Where(x => x.FullName.ToLower().StartsWith(value)).ToList();
             }
 
-            var custmFilter=filtered.Select(x => new
+            var custmFilter=filtered.Select(d => new
             {
-                x.DetainID,
-                x.LicenseID,
-                x.DetainDate,
-                x.IsReleased,
-                x.FineFees,
-                x.ReleaseDate,
-                x.NationalNo,
-                x.FullName,
-                x.ReleaseApplicationID
+                d.DetainID,
+                d.LicenseID,
+                d.DetainDate,
+
+                IsReleased = d.IsReleased,                   // للمنطق فقط
+                ReleasedStatus = d.IsReleased ? "Yes" : "No", // للعرض
+
+                d.FineFees,
+                d.ReleaseDate,
+                d.NationalNo,
+                d.FullName,
+                d.ReleaseApplicationID
             })
                 .ToList();
             dgvDetainedLicenses.DataSource = custmFilter;
@@ -221,27 +234,38 @@ namespace DVLD_System.Applications.Rlease_Detained_License
         private void cbIsReleased_SelectedIndexChanged(object sender, EventArgs e)
         {
             string filterValue = cbIsReleased.Text.Trim();
+
+            // All → إعادة تحميل البيانات كاملة
             if (filterValue == "All")
             {
-                frmListDetainedLicenses_Load(null, null);
+                frmListDetainedLicenses_Load(null,null);
+                return; 
             }
-            bool filterIsReleased = filterValue == "Yes";
-            var filtered = _DetainedLicenses.Where(x => 
-            x.IsReleased == filterIsReleased).Select(x=> new
-            {
-                x.DetainID,
-                x.LicenseID,
-                x.DetainDate,
-                x.IsReleased,
-                x.FineFees,
-                x.ReleaseDate,
-                x.NationalNo,
-                x.FullName,
-                x.ReleaseApplicationID
-            })
 
+            var filtered = _DetainedLicenses
+                .Where(d =>
+                    (filterValue == "Yes" && d.IsReleased) ||
+                    (filterValue == "No" && !d.IsReleased)
+                )
+                .Select(d => new
+                {
+                    d.DetainID,
+                    d.LicenseID,
+                    d.DetainDate,
+                    d.IsReleased, // bool للمنطق
+                    ReleasedStatus = d.IsReleased ? "Yes" : "No", // للعرض
+                    d.FineFees,
+                    d.ReleaseDate,
+                    d.NationalNo,
+                    d.FullName,
+                    d.ReleaseApplicationID
+                })
                 .ToList();
+
+            dgvDetainedLicenses.DataSource = filtered;
+            lblRecordCount.Text = dgvDetainedLicenses.Rows.Count.ToString();
         }
+
 
         private void PesonDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -282,6 +306,12 @@ namespace DVLD_System.Applications.Rlease_Detained_License
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmsApplications_Opening(object sender, CancelEventArgs e)
+        {
+            releaseDetainedLicenseToolStripMenuItem.Enabled = !(bool)dgvDetainedLicenses.CurrentRow.Cells[3].Value;
+
         }
     }
 }

@@ -19,7 +19,7 @@ namespace DVLD_System.Applications.International_License
     public partial class frmListInternationalLicesnseApplications : Form
     {
         private static List<clsInternationalLicenseDTO>_ListInternationalLicenses=clsInternationalLicense.GetAllInternationalLicense();
-        private static List<clsInternationalLicenseDTO>_ListFilter=new List<clsInternationalLicenseDTO>(_ListInternationalLicenses);
+        private static List<clsInternationalLicenseDTO> _ListFilter;
         public frmListInternationalLicesnseApplications()
         {
             InitializeComponent();
@@ -260,7 +260,7 @@ namespace DVLD_System.Applications.International_License
                    u.IssueDate,
                    u.ExpirationDate,
 
-                    IsActive = u.IsActive ? "Yes" : "No"
+                   IsActive = u.IsActive ? "Yes" : "No"
                 })
                 .ToList();
 

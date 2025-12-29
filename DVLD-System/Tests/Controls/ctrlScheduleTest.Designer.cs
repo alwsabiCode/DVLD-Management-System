@@ -206,7 +206,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 202;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -484,7 +483,6 @@
             this.Controls.Add(this.gbTestType);
             this.Name = "ctrlScheduleTest";
             this.Size = new System.Drawing.Size(552, 607);
-            this.Load += new System.EventHandler(this.ctrlScheduleTest_Load);
             this.gbTestType.ResumeLayout(false);
             this.gbTestType.PerformLayout();
             this.gbRetakeTestInfo.ResumeLayout(false);

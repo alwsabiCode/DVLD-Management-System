@@ -89,8 +89,7 @@ namespace DVLD_System.Applications.Application_Types
             else
             {
                 errorProvider1.SetError(txtFees, null);
-            }
-            ;
+            };
 
 
         }

@@ -115,27 +115,11 @@ namespace DVLD_System.People.Controls
             lblAddress.Text = "[????]";
             pbPersonImage.Image = Resources.Male_512;
         }
-
-        private void ctrlPersonCards_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAddUpdatePerson frm = new frmAddUpdatePerson(_PersonID);
             frm.ShowDialog();
             LoadPersonInfo(_PersonID);
-        }
-
-        private void lblDateOfBirth_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

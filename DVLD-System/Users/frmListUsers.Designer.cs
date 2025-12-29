@@ -62,12 +62,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(380, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 31);
+            this.label3.Size = new System.Drawing.Size(216, 33);
             this.label3.TabIndex = 10;
             this.label3.Text = "Manage Users";
             // 
@@ -95,6 +95,7 @@
             // cbFilterBy
             // 
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilterBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
@@ -105,13 +106,14 @@
             "Is Active"});
             this.cbFilterBy.Location = new System.Drawing.Point(96, 185);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(159, 28);
+            this.cbFilterBy.Size = new System.Drawing.Size(159, 24);
             this.cbFilterBy.TabIndex = 13;
             this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // cbActive
             // 
             this.cbActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActive.FormattingEnabled = true;
             this.cbActive.Items.AddRange(new object[] {
             "All",
@@ -119,15 +121,16 @@
             "No"});
             this.cbActive.Location = new System.Drawing.Point(265, 185);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(159, 28);
+            this.cbActive.Size = new System.Drawing.Size(159, 24);
             this.cbActive.TabIndex = 14;
             this.cbActive.SelectedIndexChanged += new System.EventHandler(this.cbActive_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
+            this.txtFilterValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilterValue.Location = new System.Drawing.Point(434, 186);
             this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(159, 26);
+            this.txtFilterValue.Size = new System.Drawing.Size(159, 22);
             this.txtFilterValue.TabIndex = 15;
             this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);

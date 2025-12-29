@@ -134,7 +134,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_System.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(764, 392);
+            this.btnClose.Location = new System.Drawing.Point(757, 392);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(136, 44);
             this.btnClose.TabIndex = 208;
@@ -146,10 +146,10 @@
             // 
             this.ctrlDriverLicenses1.BackColor = System.Drawing.Color.White;
             this.ctrlDriverLicenses1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlDriverLicenses1.Location = new System.Drawing.Point(2, 0);
+            this.ctrlDriverLicenses1.Location = new System.Drawing.Point(-4, 0);
             this.ctrlDriverLicenses1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlDriverLicenses1.Name = "ctrlDriverLicenses1";
-            this.ctrlDriverLicenses1.Size = new System.Drawing.Size(915, 384);
+            this.ctrlDriverLicenses1.Size = new System.Drawing.Size(912, 384);
             this.ctrlDriverLicenses1.TabIndex = 0;
             // 
             // frmShowPersonLicenseHistory

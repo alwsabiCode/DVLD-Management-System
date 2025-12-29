@@ -66,12 +66,6 @@ namespace DVLD_System.Applications.Controls
         {
             InitializeComponent();
         }
-
-        private void ctrlApplicationBasicInfo_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void llViewPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPersonDetails frm = new frmPersonDetails(_Application.ApplicatDTO.ApplicationPersonID);

@@ -31,8 +31,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.tcApplication = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
-            this.ctrlPersonCardWithFilter1 = new DVLD_System.People.Controls.ctrlPersonCardWithFilter();
             this.btnNext = new System.Windows.Forms.Button();
+            this.ctrlPersonCardWithFilter1 = new DVLD_System.People.Controls.ctrlPersonCardWithFilter();
             this.tpApplication = new System.Windows.Forms.TabPage();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -63,13 +63,13 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
             this.lblTitle.Location = new System.Drawing.Point(16, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(810, 39);
+            this.lblTitle.Size = new System.Drawing.Size(801, 39);
             this.lblTitle.TabIndex = 120;
-            this.lblTitle.Text = "Add New User";
+            this.lblTitle.Text = "New Local Driving License Application";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tcApplication
@@ -80,20 +80,34 @@
             this.tcApplication.Location = new System.Drawing.Point(12, 51);
             this.tcApplication.Name = "tcApplication";
             this.tcApplication.SelectedIndex = 0;
-            this.tcApplication.Size = new System.Drawing.Size(814, 570);
+            this.tcApplication.Size = new System.Drawing.Size(814, 531);
             this.tcApplication.TabIndex = 121;
             // 
             // tpPersonInfo
             // 
-            this.tpPersonInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPersonInfo.Controls.Add(this.btnNext);
+            this.tpPersonInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPersonInfo.Location = new System.Drawing.Point(4, 29);
             this.tpPersonInfo.Name = "tpPersonInfo";
             this.tpPersonInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPersonInfo.Size = new System.Drawing.Size(806, 537);
+            this.tpPersonInfo.Size = new System.Drawing.Size(806, 498);
             this.tpPersonInfo.TabIndex = 0;
             this.tpPersonInfo.Text = "Person Info";
             this.tpPersonInfo.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::DVLD_System.Properties.Resources.Next_32;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(666, 443);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(125, 44);
+            this.btnNext.TabIndex = 184;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // ctrlPersonCardWithFilter1
             // 
@@ -104,24 +118,9 @@
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
             this.ctrlPersonCardWithFilter1.ShowFilter = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(806, 472);
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(801, 435);
             this.ctrlPersonCardWithFilter1.TabIndex = 21;
             this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::DVLD_System.Properties.Resources.Next_32;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(662, 480);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(125, 44);
-            this.btnNext.TabIndex = 20;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // tpApplication
             // 
@@ -146,13 +145,13 @@
             this.tpApplication.Location = new System.Drawing.Point(4, 29);
             this.tpApplication.Name = "tpApplication";
             this.tpApplication.Padding = new System.Windows.Forms.Padding(3);
-            this.tpApplication.Size = new System.Drawing.Size(806, 537);
+            this.tpApplication.Size = new System.Drawing.Size(806, 498);
             this.tpApplication.TabIndex = 1;
             this.tpApplication.Text = "Application Info";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::DVLD_System.Properties.Resources.Save_32;
@@ -167,7 +166,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_System.Properties.Resources.Close_32;
@@ -343,7 +342,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(838, 626);
+            this.ClientSize = new System.Drawing.Size(822, 581);
             this.Controls.Add(this.tcApplication);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -370,7 +369,6 @@
         private System.Windows.Forms.TabControl tcApplication;
         private System.Windows.Forms.TabPage tpPersonInfo;
         private System.Windows.Forms.TabPage tpApplication;
-        private System.Windows.Forms.Button btnNext;
         private People.Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -389,5 +387,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnNext;
     }
 }

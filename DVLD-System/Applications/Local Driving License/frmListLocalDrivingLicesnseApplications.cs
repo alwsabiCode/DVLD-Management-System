@@ -17,7 +17,7 @@ namespace DVLD_System.Applications.Local_Driving_License
 {
     public partial class frmListLocalDrivingLicesnseApplications : Form
     {
-        private List<clsLocalDrivingLicenseApplicationViewDTO> _ListLocalDriving = clsLocalDrivingLicenseApplication.GetAllLocalDriving();
+        private List<clsLocalDrivingLicenseApplicationViewDTO> _ListLocalDriving;
         public frmListLocalDrivingLicesnseApplications()
         {
             InitializeComponent();
@@ -360,11 +360,6 @@ namespace DVLD_System.Applications.Local_Driving_License
                 scheduleStreetTestToolStripMenuItem.Enabled = PassedVisionTest && PassedWrittenTest && !PassedStreetTest;
 
             }
-        }
-
-        private void ScheduleTestsMenue_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -87,9 +87,6 @@ namespace DVLD_System.Applications.Local_Driving_License
             lblCreatedByUser.Text = clsUser.FindUserByUserID(_localDrivingLicenseApplication.ApplicatDTO.CreatedByUserID).UserDTO.Username;
 
         }
-
-       
-
         private void frmAddUpdateLocalDrivingLicesnseApplication_Load(object sender, EventArgs e)
         {
             _ResetDefualtValues();
@@ -99,10 +96,6 @@ namespace DVLD_System.Applications.Local_Driving_License
                 _LoadData();
             }
         }
-
-      
-
-      
         private void frmAddUpdateLocalDrivingLicesnseApplication_Activated(object sender, EventArgs e)
         {
             ctrlPersonCardWithFilter1.FilterFocus();
@@ -112,30 +105,7 @@ namespace DVLD_System.Applications.Local_Driving_License
         {
             _SelectedPersonID = obj;
         }
-
         
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (_Mode == enMode.Update)
-            {
-                btnSave.Enabled = true;
-                tpApplication.Enabled = true;
-                tcApplication.SelectedTab = tcApplication.TabPages["tpApplication"];
-                return;
-            }
-            if (ctrlPersonCardWithFilter1.PersonID != -1)
-            {
-                btnSave.Enabled = true;
-                tpApplication.Enabled = true;
-                tcApplication.SelectedTab = tcApplication.TabPages["tpApplication"];
-
-            }
-            else
-            {
-                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ctrlPersonCardWithFilter1.FilterFocus();
-            }
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -146,7 +116,7 @@ namespace DVLD_System.Applications.Local_Driving_License
                 return;
             }
             int LicenseClassID = clsLicenseClass.Find(cbLicenseClass.Text).LicenseClassID;
-            int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, clsApplication.enApplicationType.NewInternationalLicense, LicenseClassID);
+            int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
 
             if (ActiveApplicationID != -1)
             {
@@ -188,6 +158,29 @@ namespace DVLD_System.Applications.Local_Driving_License
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_Mode == enMode.Update)
+            {
+                btnSave.Enabled = true;
+                tpApplication.Enabled = true;
+                tcApplication.SelectedTab = tcApplication.TabPages["tpApplication"];
+                return;
+            }
+            if (ctrlPersonCardWithFilter1.PersonID != -1)
+            {
+                btnSave.Enabled = true;
+                tpApplication.Enabled = true;
+                tcApplication.SelectedTab = tcApplication.TabPages["tpApplication"];
+
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ctrlPersonCardWithFilter1.FilterFocus();
+            }
         }
     }
 }
